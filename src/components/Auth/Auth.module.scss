@@ -1,0 +1,20 @@
+.input {
+  background: #DFDFDF42;
+  color: #fff;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.button {
+  background: linear-gradient(90deg, #95F2FF 0%, #95F2FF 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.submit {
+  background: linear-gradient(317.91deg, #000000 -33.08%, #12F4F2 71.16%);
+  color: #000;
+  border-radius: rem(36);
+}

@@ -1,0 +1,44 @@
+@mixin border {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: rem(1); /* control the border thickness */
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }  
+}
+
+.root {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #000;
+  color: #fff;  
+  z-index: 1;       
+}
+
+.section {
+  width: 100%;
+  color: #fff;  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.form {
+  @include border;
+  padding: rem(15) rem(30);
+  background: linear-gradient(262deg, rgba(88, 88, 88, 0.19) -8.9%, rgba(57, 0, 34, 0.16) 33.39%, rgba(0, 0, 0, 0.14) 134.41%);
+  box-shadow: 6px 4px 73px -1px rgba(0, 0, 0, 0.10);
+  border-radius: rem(35);
+  backdrop-filter: blur(24.45px);
+
+  &::before {
+    border-radius: rem(35);
+    background: linear-gradient(84.82deg, #4FF4FF -3.14%, #E548FF 32.77%, #8D47FF 66.57%, #E5E799 102.49%);
+  }
+}
